@@ -13,7 +13,7 @@ app.get("/comics", async (req, res) => {
   const title = req.query.title; //dans b tu mettra valeur de la clé title (qui se trouve dans req.query.title)
   const skip = req.query.skip;
 
-  console.log(title); // limit
+  console.log(title);
 
   const response = await axios.get(
     `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=BeZrs5P2VppMGZVR&title=${title}&limit=${limit}&skip=${skip}`
