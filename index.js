@@ -49,4 +49,4 @@ app.get("/id", async (req, res) => {
   res.json(response.data);
 });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000);
