@@ -7,10 +7,9 @@ app.use(cors());
 
 const axios = require("axios");
 
-//ROUTE 1 comics
 app.get("/comics", async (req, res) => {
   const limit = req.query.limit;
-  const title = req.query.title; //dans b tu mettra valeur de la clé title (qui se trouve dans req.query.title)
+  const title = req.query.title;
   const skip = req.query.skip;
 
   console.log(title);
@@ -19,10 +18,9 @@ app.get("/comics", async (req, res) => {
     `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=BeZrs5P2VppMGZVR&title=${title}&limit=${limit}&skip=${skip}`
   );
 
-  res.json(response.data); //ce que tu renvoies au front
+  res.json(response.data);
 });
 
-//ROUTE perso
 app.get("/characters", async (req, res) => {
   const name = req.query.name;
   const limit = req.query.limit;
@@ -38,7 +36,6 @@ app.get("/characters", async (req, res) => {
   console.log(response.data);
 });
 
-//ROUTE 3
 app.get("/id", async (req, res) => {
   const idnumber = req.query.id;
 
